@@ -1,0 +1,27 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Workflow Metrics
+
+# Controls when the workflow will run
+on:
+  workflow_call:
+    inputs:
+      workflow-1-status:
+        required: true
+        type: string
+      workflow-2-status:
+        required: true
+        type: string
+
+jobs:
+  output:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Worfklow 1 status: ${{ inputs.workflow-1-status }}
+          echo Worfklow 2 status: ${{ inputs.workflow-2-status }}
