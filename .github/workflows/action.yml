@@ -1,0 +1,11 @@
+name: DEV CI Workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  workflow-init:  
+    uses: .github/workflows/workflow_init.yml@main
+    secrets: inherit
+
