@@ -28,6 +28,6 @@ jobs:
      contents: write
     uses: ./.github/workflows/workflow_metrics.yml
     with:
-      worfklow-1-status: ${{ needs.workflow-1.result }}
+      workflow-1-status: ${{ needs.workflow-1.result }}
       workflow-2-status: ${{ needs.workflow-2.result }}
     secrets: inherit
