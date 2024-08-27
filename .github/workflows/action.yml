@@ -9,3 +9,22 @@ jobs:
     uses: ./.github/workflows/workflow_init.yml
     secrets: inherit
 
+  workflow-1:
+    needs: workflow-init
+    uses: ./.github/workflows/test_ci.yaml
+    secrets: inherit    
+
+  workflow-2:     
+    needs: workflow-init
+    permissions:
+     contents: write
+    uses: ./.github/workflows/basic_ci_2.yaml
+    secrets: inherit
+
+  workflow-metrics:     
+    needs: [ workflow-1, workflow-2 ]
+    if: always() 
+    permissions:
+     contents: write
+    uses: ./.github/workflows/workflow_metrics.yaml
+    secrets: inherit
