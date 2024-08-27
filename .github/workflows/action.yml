@@ -11,14 +11,14 @@ jobs:
 
   workflow-1:
     needs: workflow-init
-    uses: ./.github/workflows/test_ci.yaml
+    uses: ./.github/workflows/test_ci.yml
     secrets: inherit    
 
   workflow-2:     
     needs: workflow-init
     permissions:
      contents: write
-    uses: ./.github/workflows/basic_ci_2.yaml
+    uses: ./.github/workflows/basic_ci_2.yml
     secrets: inherit
 
   workflow-metrics:     
@@ -26,5 +26,5 @@ jobs:
     if: always() 
     permissions:
      contents: write
-    uses: ./.github/workflows/workflow_metrics.yaml
+    uses: ./.github/workflows/workflow_metrics.yml
     secrets: inherit
