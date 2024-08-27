@@ -6,6 +6,6 @@ on:
 
 jobs:
   workflow-init:  
-    uses: .github/workflows/workflow_init.yml@main
+    uses: ./.github/workflows/workflow_init.yml
     secrets: inherit
 
