@@ -1,0 +1,15 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Workflow Init
+on:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Hello World! This is coming from workflow_init.yml
+
+
